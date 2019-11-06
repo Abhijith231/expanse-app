@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'OpenSans',
                 fontWeight: FontWeight.bold,
               ),
+              button: TextStyle(color: Colors.white),
             ),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
@@ -46,18 +47,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    // Transaction(
-    //   id: 'T1',
-    //   title: 'New Shoes',
-    //   amount: 650.00,
-    //   date: DateTime.now(),
-    // ),
-    // Transaction(
-    //   id: 'T1',
-    //   title: 'Weekly Groceries',
-    //   amount: 120.00,
-    //   date: DateTime.now(),
-    // )
+    Transaction(
+      id: 'T1',
+      title: 'New Shoes',
+      amount: 650.00,
+      date: DateTime.now().subtract(Duration(days: 1),),
+    ),
+    Transaction(
+      id: 'T1',
+      title: 'Weekly Groceries',
+      amount: 120.00,
+      date: DateTime.now(),
+    )
   ];
 
   List<Transaction> get _recentTransactions {
